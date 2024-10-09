@@ -4,7 +4,7 @@ import githubIcon from '../assets/github.svg';
 import linkedinIcon from '../assets/linkedin.svg';
 import slackIcon from '../assets/slack.svg';
 import emailIcon from '../assets/email.svg';
-import profileImage from '../assets/cesar.JPEG';
+import profileImage from '../assets/cesar.jpg';
 
 const Contact = () => {
   const ref = useRef(null);
