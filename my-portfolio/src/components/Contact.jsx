@@ -50,7 +50,7 @@ const Contact = () => {
         <a href="mailto:cesarocastro115@gmail.com"><img src={emailIcon} alt="Email" /></a>
         <a href="https://github.com/SpacemanCeezer"><img src={githubIcon} alt="GitHub" /></a>
         <a href="https://www.linkedin.com/in/cesar-castro-3450232b2/"><img src={linkedinIcon} alt="LinkedIn" /></a>
-        <a href="https://slack.com/"><img src={slackIcon} alt="Slack" /></a>
+        
       </div>
     </section>
   );
