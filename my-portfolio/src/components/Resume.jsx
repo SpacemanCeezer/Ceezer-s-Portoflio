@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import '../styles/main.css';
-import CV from '../assets/cv.png'; 
+import ResumeImage from '../assets/Resume.png';
 
 const Resume = () => {
   const ref = useRef(null);
@@ -12,7 +12,7 @@ const Resume = () => {
       threshold: 0.1,
     };
 
-    const handleIntersect = (entries, observer) => {
+    const handleIntersect = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -23,25 +23,42 @@ const Resume = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    if (ref.current) observer.observe(ref.current);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      if (ref.current) observer.unobserve(ref.current);
     };
   }, []);
+
+  const viewFullImage = () => {
+    window.open(ResumeImage, '_blank');
+  };
 
   return (
     <section id="resume" className="section fade-in" ref={ref}>
       <div className="resume-content">
         <h2>Resume</h2>
-        <div className="pdf-container">
-          <img src={CV} alt="Resume" className="resume-pdf" />
+
+        <div className="image-container">
+          <img
+            src={ResumeImage}
+            alt="Resume"
+            className="resume-image"
+            width="100%"
+            onClick={viewFullImage}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
-        <a href={CV} target="_blank" rel="noopener noreferrer" className="resume-download">Download CV</a>
+
+        <div className="button-container">
+        <a
+            href={ResumeImage}
+            download="My_Resume.png" 
+            className="resume-download"
+          >
+            Download Image
+          </a>
+        </div>
       </div>
     </section>
   );
