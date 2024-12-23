@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import '../styles/main.css';
-import ResumeImage from '../assets/Resume.png';
+import ResumeImage from '../assets/Resume.png'; // Path to the image
+import ResumePDF from '../assets/Resume.pdf'; // Path to the PDF file
 
 const Resume = () => {
   const ref = useRef(null);
@@ -51,12 +52,12 @@ const Resume = () => {
         </div>
 
         <div className="button-container">
-        <a
-            href={ResumeImage}
-            download="My_Resume.png" 
+          <a
+            href={ResumePDF} 
+            download="My_Resume.pdf" 
             className="resume-download"
           >
-            Download Image
+            Download Resume
           </a>
         </div>
       </div>
